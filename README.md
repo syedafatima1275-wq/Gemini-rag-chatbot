@@ -84,3 +84,129 @@ Deploy using Streamlit or FastAPI
 Goal
 
 To build a safe, grounded, and domain-specific AI assistant that only answers from trusted HR documents using RAG.
+# Week 11 - Vector Database and Semantic Search
+
+## Overview
+This lab focuses on **Semantic Search, Embeddings, Vector Databases, and Retrieval-Augmented Generation (RAG)** using **Gemini API** and **ChromaDB**.
+
+The goal is to move beyond traditional keyword-based search and implement a semantic search system that understands the **meaning and context** of text through embeddings.
+
+---
+
+## Objectives
+- Understand **text embeddings**
+- Generate embeddings using **Google Gemini API**
+- Calculate similarity using **Cosine Similarity**
+- Store vector embeddings in **ChromaDB**
+- Implement **Semantic Search**
+- Build a simple **RAG (Retrieval-Augmented Generation) Pipeline**
+- Compare **Keyword Search vs Semantic Search**
+
+---
+
+## Technologies Used
+- **Python**
+- **Google Gemini API**
+- **ChromaDB**
+- **LangChain**
+- **NumPy**
+- **LangChain Text Splitters**
+- **Google Generative AI SDK**
+
+---
+
+## Project Structure
+
+### Part 1: Embeddings
+This section introduces embeddings and how text can be converted into numerical vector representations.
+
+#### Task 1.1: Generate Embeddings
+- Install required libraries
+- Configure Gemini API
+- Generate embeddings for text using Gemini models
+
+#### Task 1.2: Calculate Similarity
+- Implement **Cosine Similarity**
+- Compare semantic closeness between vectors
+
+---
+
+### Part 2: ChromaDB Setup
+
+#### Task 2.1: Initialize ChromaDB
+- Create a vector database
+- Configure document storage
+
+#### Task 2.2: Load and Index Documents
+- Split text into chunks
+- Convert chunks into embeddings
+- Store embeddings in ChromaDB for retrieval
+
+---
+
+### Part 3: Semantic RAG
+
+#### Task 3.1: Test Vector Search
+- Perform semantic search queries
+- Retrieve contextually relevant documents
+
+Example Queries:
+- `time off policy`
+- `vacation`
+- `WFH guidelines`
+- `remote work`
+- `maternity leave`
+- `parental leave`
+
+#### Task 3.2: Build Semantic RAG Pipeline
+- Retrieve relevant context using vector search
+- Send retrieved context to Gemini
+- Generate intelligent responses
+
+---
+
+## Keyword Search vs Semantic Search
+
+### Keyword Search
+- Matches exact words
+- Limited understanding of meaning
+- Fails with synonyms or paraphrased queries
+
+### Semantic Search
+- Understands intent and meaning
+- Uses embeddings and vector similarity
+- Retrieves contextually relevant results even with different wording
+
+Example:
+A query like **"vacation"** can still retrieve information about **"time off policy"**, even if exact words do not match.
+
+---
+
+## Installation
+
+Install dependencies:
+
+```bash
+pip install chromadb
+pip install langchain-community
+pip install langchain-text-splitters
+pip install google-generativeai
+pip install google-genai
+pip install langchain-google-genai
+from kaggle_secrets import UserSecretsClient
+
+user_secrets = UserSecretsClient()
+api_key = user_secrets.get_secret("Gemini_API_Key")
+Learning Outcomes
+After completing this lab, we will be able to:
+
+Understand how embeddings work
+Use vector databases for information retrieval
+Implement semantic search systems
+Build a basic RAG application
+Compare keyword-based and semantic search approaches
+Conclusion
+This lab demonstrates how Semantic Search powered by embeddings and vector databases is more intelligent than traditional keyword matching. By integrating Gemini API with ChromaDB, a simple but effective RAG pipeline was developed to retrieve meaningful context and generate relevant responses.
+## Author
+**Syeda Fatima Zahra**  
+Week 11 Lab - Semantic Search & Vector Database
