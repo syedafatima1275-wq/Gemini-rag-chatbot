@@ -207,6 +207,168 @@ Build a basic RAG application
 Compare keyword-based and semantic search approaches
 Conclusion
 This lab demonstrates how Semantic Search powered by embeddings and vector databases is more intelligent than traditional keyword matching. By integrating Gemini API with ChromaDB, a simple but effective RAG pipeline was developed to retrieve meaningful context and generate relevant responses.
+# Company Knowledge Assistant (Gemini + RAG)
+
+## Overview
+This project is a **Company Knowledge Assistant** built using **Streamlit, Gemini API, and ChromaDB** with a **Retrieval-Augmented Generation (RAG)** pipeline.
+
+The application allows users to ask questions in a chatbot interface and retrieves relevant company-related information using **semantic search** before generating intelligent responses using **Gemini AI**.
+
+---
+
+## Features
+- 🤖 AI-powered chatbot using **Gemini 1.5 Flash**
+- 🔍 **Semantic Search** using embeddings
+- 🗂️ **Vector Database** with ChromaDB
+- 📚 Context-aware responses using **RAG**
+- 💬 Interactive **Streamlit Chat UI**
+- ⚡ Fast retrieval of company knowledge documents
+
+---
+
+## Technologies Used
+- **Python**
+- **Streamlit**
+- **Google Gemini API**
+- **ChromaDB**
+- **Requests**
+- **Python Dotenv**
+
+---
+
+## Project Workflow
+
+### 1. Gemini Embeddings
+The system generates **text embeddings** using the Gemini embedding model:
+
+- Model Used: `text-embedding-004`
+- Converts text into vector embeddings
+- Helps understand semantic meaning instead of keyword matching
+
+---
+
+### 2. ChromaDB Vector Storage
+Documents are stored inside **ChromaDB**:
+
+- Creates a vector database collection
+- Stores document embeddings
+- Enables fast semantic retrieval
+
+Collection Name:
+```python
+company_docs
+```
+
+---
+
+### 3. Retrieval-Augmented Generation (RAG)
+When a user asks a question:
+
+1. The query is converted into embeddings
+2. ChromaDB retrieves relevant documents
+3. Retrieved content becomes **context**
+4. Gemini generates an accurate response based only on that context
+
+This improves response quality and reduces hallucinations.
+
+---
+
+### 4. Streamlit Chat Interface
+The app provides an interactive UI where users can:
+
+- Ask company-related questions
+- Get intelligent responses
+- View conversation history
+
+Example Questions:
+- `What is the time off policy?`
+- `Can employees work remotely?`
+- `What are maternity leave rules?`
+- `Tell me about vacation policy`
+
+---
+
+## Installation
+
+Install required dependencies:
+
+```bash
+pip install streamlit
+pip install chromadb
+pip install requests
+pip install python-dotenv
+```
+
+---
+
+## Environment Variables
+
+Create a `.env` file and add your Gemini API key:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+---
+
+## Run the Application
+
+Start the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## Project Structure
+
+```plaintext
+project-folder/
+│── app.py
+│── .env
+│── README.md
+```
+
+---
+
+## How It Works
+
+### User Query
+The user enters a question in the chat interface.
+
+### Semantic Retrieval
+Relevant documents are retrieved using vector similarity search.
+
+### Context Generation
+Retrieved documents are combined as context.
+
+### AI Response
+Gemini generates a context-based response.
+
+---
+
+## Learning Outcomes
+Through this project, you will learn:
+
+- How **RAG systems** work
+- Using **Gemini API** for embeddings and text generation
+- Implementing **semantic search**
+- Managing **vector databases**
+- Building AI apps using **Streamlit**
+
+---
+
+## Future Improvements
+- Upload custom company documents
+- Add chat memory
+- Multi-user support
+- Better UI design
+- Support for PDF document ingestion
+
+---
+
+AI & RAG Project - Company Knowledge Assistant
 ## Author
 **Syeda Fatima Zahra**  
-Week 11 Lab - Semantic Search & Vector Database
+Week 11,12 Lab - Semantic Search & Vector Database
